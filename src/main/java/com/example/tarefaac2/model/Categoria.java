@@ -1,19 +1,9 @@
 package com.example.tarefaac2.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @Entity
 @Getter
@@ -32,7 +22,7 @@ public class Categoria {
   @Column(name = "cat_nome", length = 200, nullable = false)
   private String nome;
 
-  @OneToMany(mappedBy = "categoriaProdutos")
+  @OneToMany(mappedBy = "categoria")
   private List<Produto> produtos;
 
   public Categoria(String nome) {

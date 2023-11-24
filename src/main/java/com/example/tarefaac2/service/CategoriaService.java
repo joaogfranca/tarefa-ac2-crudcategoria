@@ -81,7 +81,7 @@ public class CategoriaService {
 
     for (int i = 0; i < listaProduto.size(); i++) {
       Produto produto = listaProduto.get(i);
-      produto.setCategoriaProdutos(null);
+      produto.setCategoria(null);
       produtoRepository.save(produto);
     }
 
@@ -102,7 +102,7 @@ public class CategoriaService {
     if (!listaProduto.isEmpty()) {
       for (int i = 0; i < listaProduto.size(); i++) {
         Produto produto = listaProduto.get(i);
-        produto.setCategoriaProdutos(null);
+        produto.setCategoria(null);
         produtoRepository.save(produto);
       }
     }

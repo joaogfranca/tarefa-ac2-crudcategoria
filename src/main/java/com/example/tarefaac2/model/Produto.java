@@ -1,19 +1,7 @@
 package com.example.tarefaac2.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Getter
@@ -29,15 +17,15 @@ public class Produto {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "prod_nome", length = 200, nullable = false)
+  @Column(name = "prod_name", length = 200, nullable = false)
   private String nome;
 
-  @Column(name = "prod_prec", length = 200, nullable = false)
+  @Column(name = "prod_price", nullable = false)
   private Double preco;
 
   @ManyToOne
-  @JoinColumn(name = "categoriaProdutos_id")
-  private Categoria categoriaProdutos;
+  @JoinColumn(name = "categoria_id")
+  private Categoria categoria;
 
   public Produto(String nome, Double preco) {
     this.nome = nome;

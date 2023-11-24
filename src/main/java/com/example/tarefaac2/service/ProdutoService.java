@@ -30,9 +30,7 @@ public class ProdutoService {
           .nome(produto.getNome())
           .preco(produto.getPreco())
           .categoriaId(
-            produto.getCategoriaProdutos() == null
-              ? 0L
-              : produto.getCategoriaProdutos().getId()
+            produto.getCategoria() == null ? 0L : produto.getCategoria().getId()
           )
           .build();
       })
@@ -48,7 +46,7 @@ public class ProdutoService {
     produtoDTO.setId(produto.getId());
     produtoDTO.setNome(produto.getNome());
     produtoDTO.setPreco(produto.getPreco());
-    produtoDTO.setCategoriaId(produto.getCategoriaProdutos().getId());
+    produtoDTO.setCategoriaId(produto.getCategoria().getId());
 
     return produtoDTO;
   }
@@ -61,14 +59,14 @@ public class ProdutoService {
     Produto produtoBanco = new Produto();
     produtoBanco.setNome(produto.getNome());
     produtoBanco.setPreco(produto.getPreco());
-    produtoBanco.setCategoriaProdutos(categoria);
+    produtoBanco.setCategoria(categoria);
     produtoRepository.save(produtoBanco);
 
     ProdutoDTO produtoDTO = new ProdutoDTO();
     produtoDTO.setId(produtoBanco.getId());
     produtoDTO.setNome(produtoBanco.getNome());
     produtoDTO.setPreco(produtoBanco.getPreco());
-    produtoDTO.setCategoriaId(produtoBanco.getCategoriaProdutos().getId());
+    produtoDTO.setCategoriaId(produtoBanco.getCategoria().getId());
 
     return produtoDTO;
   }
@@ -84,7 +82,7 @@ public class ProdutoService {
 
     produtoBanco.setNome(produto.getNome());
     produtoBanco.setPreco(produto.getPreco());
-    produtoBanco.setCategoriaProdutos(categoria);
+    produtoBanco.setCategoria(categoria);
 
     produtoRepository.save(produtoBanco);
   }

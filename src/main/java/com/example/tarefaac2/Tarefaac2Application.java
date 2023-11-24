@@ -52,23 +52,23 @@ public class Tarefaac2Application {
       categoriaRepository.save(catEletronicos);
 
       Produto foundSkate = produtoRepository.findById(1L).get();
-      foundSkate.setCategoriaProdutos(catEsportes);
+      foundSkate.setCategoria(catEsportes);
       produtoRepository.save(foundSkate);
 
       Produto foundMáquinaCafé = produtoRepository.findById(2L).get();
-      foundMáquinaCafé.setCategoriaProdutos(catCozinha);
+      foundMáquinaCafé.setCategoria(catCozinha);
       produtoRepository.save(foundMáquinaCafé);
 
       Produto foundDrone = produtoRepository.findById(3L).get();
-      foundDrone.setCategoriaProdutos(catGadgets);
+      foundDrone.setCategoria(catGadgets);
       produtoRepository.save(foundDrone);
 
       Produto foundCadeiraDePraia = produtoRepository.findById(4L).get();
-      foundCadeiraDePraia.setCategoriaProdutos(catLazer);
+      foundCadeiraDePraia.setCategoria(catLazer);
       produtoRepository.save(foundCadeiraDePraia);
 
       Produto foundTecladoRetroiluminado = produtoRepository.findById(5L).get();
-      foundTecladoRetroiluminado.setCategoriaProdutos(catEletronicos);
+      foundTecladoRetroiluminado.setCategoria(catEletronicos);
       produtoRepository.save(foundTecladoRetroiluminado);
 
       System.out.println(
